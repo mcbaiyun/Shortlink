@@ -3,10 +3,10 @@
 	require_once('inc/require.php');
 	
 	// 重定向
-  	if(isset($_GET['id'])) {
+  	if(isset($_GET['u'])) {
     	$url_c = new url();
     	// 获取目标网址
-    	$url = $url_c->get_url($_GET['id']);
+    	$url = $url_c->get_url($_GET['u']);
     	// 重定向至目标网址
     	if($url) {
       		header('Location: ' . $url);
@@ -14,7 +14,6 @@
     	}
   	}
 ?>
-
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -22,7 +21,8 @@
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<!--标题-->
 	    <title><?php echo get_title() . ' - ' . get_description(); ?></title>
-		<!--介绍、关键词的放置处（SEO优化）-->
+	    <link rel="shortcut icon" href=".\img\favicon.ico">
+	    <!--介绍、关键词的放置处（SEO优化）-->
 	    <meta name="description" content="ShortLink 短链接服务">
 	    <meta name="keyword" content="短链接,ShortLink,Link,链接缩短,短网址">
 		<!--引入 CSS 文件-->
@@ -45,7 +45,12 @@
 				<input id="shorturlcopy" type="button" value="复制" onclick="copyText()" />
 			</div>
 			<div class="footer">
-				Copyright &copy; <a href="https://www.baoshuo.ren/">宝硕小站</a> | <a href="https://github.com/Caringor/CRZ.im/" title="源码" target="_blank">Github</a>
+			<div class="Copyright" style="font-size:18px">
+				<a href="https://baiyun.gq/">白云</a> Copyright &copy; 2020 All Rights Reserved
+			</div>
+			<div class="Powers">
+				Powered by <a href="https://www.baoshuo.ren/">宝硕</a> and <a href="https://github.com/Caringor/">Caringor</a>
+			</div>
 			</div>
 	    </div>
 		<!--嵌入 JS 代码-->
